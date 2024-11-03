@@ -6,6 +6,15 @@ CREATE TABLE users (
     password VARCHAR(100)
 );
 
+INSERT INTO users (id, username, email, password)
+VALUES (001, 'user1', 'user1@gmail.com', '123');
+
+INSERT INTO users (id, username, email, password)
+VALUES (002, 'user2', 'user2@gmail.com', '12345');
+
+INSERT INTO users (id, username, email, password)
+VALUES (003, 'user3', 'user3@gmail.com', '123123');
+
 -- Cấu trúc phần tương tác
 CREATE TABLE interacts (
     id INT PRIMARY KEY,
