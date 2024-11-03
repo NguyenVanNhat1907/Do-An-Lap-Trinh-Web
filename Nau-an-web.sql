@@ -22,6 +22,7 @@ CREATE TABLE interacts (
     comment_id INT,
     recipe_id INT,
     queue INT,
+    image VARCHAR(100),
     FOREIGN KEY (user_id) REFERENCES users (id),
     FOREIGN KEY (comment_id) REFERENCES comments (id),
     FOREIGN KEY (recipe_id) REFERENCES recipes (id)
