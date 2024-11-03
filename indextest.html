@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Công thức nấu ăn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        nav h2 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+            display: block;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background: #444;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        #recipeDisplay {
+            margin-top: 20px;
+        }
+
+        .recipe {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            background: #fff;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .recipe img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+
+        .recipe-detail {
+            margin-top: 20px;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .recipe-detail img {
+            width: 200px;
+            height: 200px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h2>Công thức nấu ăn</h2>
+        <ul>
+            <li>
+                <a href="#">Loại món ăn</a>
+                <ul>
+                    <li><a href="#" onclick="showRecipes('anchay')">Ăn chay</a></li>
+                    <li><a href="#" onclick="showRecipes('ankien')">Ăn kiên</a></li>
+                    <li><a href="#" onclick="showRecipes('mevabe')">Mẹ và bé</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Loại bữa ăn</a>
+                <ul>
+                    <li><a href="#" onclick="showRecipes('ansang')">Bữa sáng</a></li>
+                    <li><a href="#" onclick="showRecipes('antrua')">Bữa trưa</a></li>
+                    <li><a href="#" onclick="showRecipes('antoi')">Bữa tối</a></li>
+                    <li><a href="#" onclick="showRecipes('trangmieng')">Tráng miệng</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="recipeDisplay">
+        <!-- Các món ăn sẽ được hiển thị ở đây -->
+    </div>
+
+    <div id="recipeDetail" class="recipe-detail">
+        <!-- Chi tiết món ăn sẽ được hiển thị ở đây -->
+    </div>
+
+    <script>
+        const recipes = {
+            anchay: [
+                { name: 'Gỏi cuốn', img: 'images/goicuon.jpg', detail: 'Gỏi cuốn là món ăn truyền thống Việt Nam, thường được làm từ tôm, thịt và rau sống.' },
+                { name: 'Đậu hũ xào', img: 'images/dauhu.jpg', detail: 'Đậu hũ xào là món ăn đơn giản nhưng rất ngon và bổ dưỡng.' },
+                { name: 'Chè đậu xanh', img: 'images/che.jpg', detail: 'Chè đậu xanh là món tráng miệng ngọt mát, thích hợp cho mùa hè.' },
+            ],
+            ankien: [
+                { name: 'Thịt kho', img: 'images/thitkho.jpg', detail: 'Thịt kho là món ăn phổ biến trong bữa cơm gia đình Việt Nam.' },
+                { name: 'Canh chua', img: 'images/canchua.jpg', detail: 'Canh chua là món ăn thanh mát, thường được nấu từ cá và rau củ.' },
+                { name: 'Gà rán', img: 'images/garan.jpg', detail: 'Gà rán giòn rụm, thơm ngon, là món ăn yêu thích của nhiều người.' },
+            ],
+            ansang: [
+                { name: 'Bánh mì ốp la', img: 'images/banhmi.jpg', detail: 'Bánh mì ốp la là món ăn sáng phổ biến, nhanh gọn và bổ dưỡng.' },
+                { name: 'Sữa chua', img: 'images/suachua.jpg', detail: 'Sữa chua là món ăn nhẹ, tốt cho sức khỏe.' },
+                { name: 'Bánh pancake', img: 'images/pancake.jpg', detail: 'Bánh pancake là món ăn ngọt, thích hợp cho bữa sáng.' },
+            ],
+        };
+
+        function showRecipes(category) {
+            const display = document.getElementById('recipeDisplay');
+            display.innerHTML = `<h3>Món ăn ${category}</h3>`;
+            recipes[category].forEach(recipe => {
+                display.innerHTML += `
+                    <div class="recipe" onclick="showRecipeDetail('${recipe.name}', '${recipe.img}', '${recipe.detail}')">
+                        <img src="${recipe.img}" alt="${recipe.name}">
+                        <div>${recipe.name}</div>
+                    </div>
+                `;
+            });
+        }
+
+        function showRecipeDetail(name, img, detail) {
+            const detailDisplay = document.getElementById('recipeDetail');
+            detailDisplay.innerHTML = `
+                <h3>${name}</h3>
+                <img src="${img}" alt="${name}">
+                <p>${detail}</p>
+            `;
+            detailDisplay.style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
