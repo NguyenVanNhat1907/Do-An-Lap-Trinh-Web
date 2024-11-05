@@ -1,4 +1,3 @@
-
 CREATE TABLE CACBUOCNAU (
     MaBuoc INT NOT NULL,
     MaCongThuc INT NOT NULL,
@@ -6,7 +5,6 @@ CREATE TABLE CACBUOCNAU (
     HuongDan TEXT NULL,
     PRIMARY KEY (MaBuoc)
 );
-
 CREATE TABLE CONGTHUC (
     MaCongThuc INT NOT NULL,
     TenCongThuc NVARCHAR(100) NULL,
@@ -19,26 +17,22 @@ CREATE TABLE CONGTHUC (
     AnhChiTiet NVARCHAR(100) NULL,
     PRIMARY KEY (MaCongThuc)
 );
-
 CREATE TABLE CONGTHUC_LOAIMONAN (
     MaCongThuc INT NOT NULL,
     MaLoaiMonAn INT NOT NULL
 );
-
 CREATE TABLE CONGTHUC_NGUYENLIEU (
     ID_CongThuc_NguyenLieu INT NOT NULL,
     MaCongThuc INT NOT NULL,
     MaNguyenLieu INT NOT NULL,
     PRIMARY KEY (ID_CongThuc_NguyenLieu)
 );
-
 CREATE TABLE LOAIMONAN (
     MaLoaiMonAn INT NOT NULL,
     TenLoaiMonAn NVARCHAR(100) NULL,
     Mota NVARCHAR(200) NULL,
     PRIMARY KEY (MaLoaiMonAn)
 );
-
 CREATE TABLE LOAINGUYENLIEU (
     MaLoaiNguyenLieu INT NOT NULL,
     TenLoai NVARCHAR(20) NOT NULL,
@@ -53,7 +47,6 @@ CREATE TABLE NGUYENLIEU (
     DonVi NVARCHAR(20) NULL,
     PRIMARY KEY (MaNguyenLieu)
 );
-
 CREATE TABLE TaiKhoan (
     TenDangNhap NVARCHAR(50) NOT NULL,
     MatKhau NVARCHAR(50) NULL,
@@ -65,7 +58,7 @@ INSERT INTO CACBUOCNAU (MaBuoc, MaCongThuc, BuocThucHien, HuongDan) VALUES
 (3, 1, 3, 'Bắc nồi nước lên bếp, khi nước bắt đầu sôi lăn tăn thì cho 1/2 muỗng cà phê muối vào khoáy đều, tiếp theo cho cà rốt và đậu que vào luộc vừa chín. Không nên luộc chín quá vì như vậy sẽ làm rau bị mềm, không còn giòn và ngọt nữa. Vớt ra và để ráo nước.'),
 (4, 1, 4, 'Bắc chảo nhỏ lên bếp, cho vào một xíu dầu và xào phần thịt gà cho chín, để lửa nhỏ cho thịt gà chín đều và thấm đều gia vị. Có thể thay xào bằng việc áp chảo nhưng phải để nguyên miếng gà áp chảo nhé.'),
 (5, 1, 5, 'Khi tất cả nguyên liệu đã sẵn sàng thì bắt đầu cuốn. Trải miếng rong biển ra, mặt trơn để ở ngoài và mặt nhám ở phía bên trong. Xếp lần lượt xà lách, dưa leo, cà rốt, đậu que, thịt gà và thêm một ít sốt Mayonnaise cho đậm vị (nếu bạn nào thích ăn béo). Lúc cuốn nhớ vừa cuốn vừa ép xuống cho cuốn chặt và đẹp như vậy khi cắt ra mới không bị đổ nhân.'),
-(6, 1, 6, 'Cắt cuốn ra và thưởng thức, có thể chấm cùng tương ớt và sốt Mayonnaise sẽ rất ngon và béo. Còn không có thể không cần nước sốt vì trong thịt gà đã có gia vị ướp rất vừa miệng rồi nhé.');
+(6, 1, 6, 'Cắt cuốn ra và thưởng thức, có thể chấm cùng tương ớt và sốt Mayonnaise sẽ rất ngon và béo. Còn không có thể không cần nước sốt vì trong thịt gà đã có gia vị ướp rất vừa miệng rồi nhé.'),
 (7, 2, 1, 'Nghêu mua về bạn ngâm tầm 2-3 tiếng cho nghêu nhả bớt cát ra nếu không khi ăn sẽ mất ngon. Bạn có thể cắt thêm vào nước ngâm nghêu 2-3 trái ớt nhé.'),
 (8, 2, 2, 'Thơm cắt miếng xéo vừa ăn. Sả cắt xéo, mỏng 3 cây, 2 cây sả còn lại đập dập sau đó cắt khúc 3-4cm. Lá chanh cắt sợi nhỏ. Ớt cắt khoanh tròn, cắt khúc ra. Tỏi bằm nhuyễn.'),
 (9, 2, 3, 'Cho 2 muỗng canh dầu ăn vào nồi, cho tỏi vào phi thơm, khi tỏi thơm rồi cho xả cắt khoanh tròn vào, xào tiếp đến khi nghe mùi sả thơm thì cho thơm vào, xào 10s thì cho đường vào, xào tiếp 3p thì cho 0.5 lít nước vào nấu sôi.'),
@@ -121,7 +114,6 @@ INSERT INTO CACBUOCNAU (MaBuoc, MaCongThuc, BuocThucHien, HuongDan) VALUES
 (308, 67, 3, 'Nước sôi, bỏ gạo và yến mạch vào (Do yến mạch mình dùng là loại mix ăn liền nên mình không cần rang trước. Bạn nào dùng yến mạch tươi thì nên rang rồi mới bỏ vào nhé).'),
 (309, 67, 4, 'Tắt bếp, đậy nắp vung. Ngâm trong 20 phút.'),
 (310, 67, 5, 'Thêm 250ml sữa tươi vào nồi. Nêm thêm sữa đặc nếu muốn uống ngọt. Đun hỗn hợp trong 15 phút nữa.');
-
 INSERT INTO CONGTHUC (MaCongThuc, TenCongThuc, MoTa, ThoiGianChuanBi, TongThoiGianNau, PhucVu, TacGia, Anh, AnhChiTiet) VALUES
 (1, 'Rong Biển Cuộn Rau Củ', 'Rong biển là món ăn không còn xa lạ và được chế biến với nhiều nguyên liệu khác nhau, và món ăn này chủ yếu được cuộn cơm để làm món ăn no trong những buổi picnic gia đình. Tuy nhiên, sự biến tấu nhẹ nhàng dành cho những bạn không thích ăn cơm, hoặc các bạn ăn Eat Clean thì món này chắc chắn là sự lựa chọn hoàn hảo. Nguyên liệu rất tươi ngon lại chế biến rất đơn giản chắc chắn sẽ là công thức mới hay ho cho các nàng muốn có một hình thể đẹp.', 10, 20, 4, 'Phương Oanh', 'khaivi1.jpg', 'khaivichitiet1.jpg'),
 (2, 'Nghêu Hấp Thái', 'Món nghêu hấp thái với những con nghêu ngọt béo hòa quyện cùng vị chua, cay đặc trưng của món thái cùng mùi thơm của xả, lá chanh thật không thể cưỡng lại. Hãy cùng hằng vào bếp để làm nhé.', 15, 20, 2, 'Mỹ Chi', 'khaivi2.jpg', 'khaivichitiet2.jpg'),
@@ -150,9 +142,6 @@ INSERT INTO CONGTHUC (MaCongThuc, TenCongThuc, MoTa, ThoiGianChuanBi, TongThoiGi
 (25, 'Tép Rim Nước Cốt Dừa', 'Tép rim nước cốt dừa là món ăn tạo nên nét đặc trưng của cư dân miền sông nước, đặc biệt phổ biến ở xứ dừa Bến Tre. Với cách làm đơn giản, nguyên liệu dễ tìm, nhưng hương vị mang lại thì trên cả tuyệt vời đã làm cho món ăn này đi theo tâm trí biết bao người con miền Tây xa quê. Cùng theo dõi cách làm món Tép rim nước cốt dừa dân dã thôn quê này nhé!', 20, 50, 4, 'Diệu Linh', 'monchinh6.jpg', 'monchinhchitiet6.jpg'),
 (26, 'Gà Ác Tiềm Thuốc Bắc', 'Gà Ác Tiềm Thuốc Bắc là một món ngon từ gà được nhiều người biết đến với công dụng bồi bổ cho sức khỏe. Ngoài ra, gà ác có tính bình, vị ngọt giúp giải toả độc tố trong cơ thể, cho giấc ngủ ngon hơn, món gà ác tiềm thuốc bắc cho bà bầu cực kì tốt. Hãy cùng Cooky khám phá cách nấu gà ác tiềm thuốc bắc cho bà bầu ngon, đơn giản ngay tại nhà nhé!', 15, 40, 3, 'Kim Chi', 'monchinh7.jpg', 'monchinhchitiet7.jpg'),
 (27, 'Gà Rang Muối Xả', 'Cùng vào bếp và thực hiện món gà rang muối sả thơm lừng, gọi là muối nhưng hỗn hợp này được làm từ gạo tẻ, đậu xanh và muối biển, được rang chín rồi xay thành hỗn hợp bột mịn, sau đó xóc đều với gà để tạo nên vị thơm bùi, mằn mặn rất hấp dẫn. Món ăn có lớp vỏ giòn tan, thơm bùi, thịt gà bên trong chín mềm, đậm đà, thích hợp cho bữa ăn hằng ngày và cả các dịp lễ, Tết, tiệc tùng bởi hương vị thơm ngon cùng hình thức bắt mắt. Gà rang muối tưởng chừng cầu kỳ, phức tạp nhưng bạn hoàn toàn có thể vào bếp', 18, 45, 3, 'Phương Lan', 'monchinh8.jpg', 'monchinhchitiet8.jpg');
-
-
-
 INSERT INTO CONGTHUC_LOAIMONAN (MaCongThuc, MaLoaiMonAn) VALUES
 (1, 1),
 (2, 1),
@@ -221,7 +210,6 @@ INSERT INTO CONGTHUC_LOAIMONAN (MaCongThuc, MaLoaiMonAn) VALUES
 (65, 5),
 (66, 5),
 (67, 5);
-
 INSERT INTO CONGTHUC_NGUYENLIEU (ID_CongThuc_NguyenLieu, MaCongThuc, MaNguyenLieu) VALUES
 (1, 1, 1),
 (2, 1, 2),
@@ -378,7 +366,6 @@ INSERT INTO CONGTHUC_NGUYENLIEU (ID_CongThuc_NguyenLieu, MaCongThuc, MaNguyenLie
 (153, 18, 83),
 (154, 18, 9),
 (155, 18, 33);
-
 INSERT INTO CONGTHUC_NGUYENLIEU (ID_CongThuc_NguyenLieu, MaCongThuc, MaNguyenLieu) VALUES
 (201, 23, 19),
 (202, 23, 20),
@@ -580,7 +567,6 @@ INSERT INTO CONGTHUC_NGUYENLIEU (ID_CongThuc_NguyenLieu, MaCongThuc, MaNguyenLie
 (398, 48, 19),
 (399, 48, 143),
 (400, 48, 149);
-
 INSERT INTO CONGTHUC_NGUYENLIEU (ID_CongThuc_NguyenLieu, MaCongThuc, MaNguyenLieu) VALUES
 (401, 48, 150),
 (402, 48, 23),
@@ -668,14 +654,12 @@ INSERT INTO CONGTHUC_NGUYENLIEU (ID_CongThuc_NguyenLieu, MaCongThuc, MaNguyenLie
 (484, 67, 102),
 (485, 67, 67),
 (486, 67, 23);
-
 INSERT INTO LOAIMONAN (MaLoaiMonAn, TenLoaiMonAn, Mota) VALUES
 (1, 'Khai Vị', NULL),
 (2, 'Đồ ăn sáng', NULL),
 (3, 'Món chính', NULL),
 (4, 'Tráng Miệng', NULL),
 (5, 'Đồ uống', NULL);
-
 INSERT INTO LOAINGUYENLIEU (MaLoaiNguyenLieu, TenLoai, MoTa) VALUES
 (1, 'Rau Củ', 'aaa'),
 (2, 'Thịt', NULL),
@@ -683,7 +667,6 @@ INSERT INTO LOAINGUYENLIEU (MaLoaiNguyenLieu, TenLoai, MoTa) VALUES
 (4, 'Trái Cây', NULL),
 (5, 'Đồ khô Và Gia Vị', 'Bao gồm các đồ khô như mì ống, bột mì, bột ngọt...'),
 (6, 'Đồ Uống', NULL);
-
 INSERT INTO NGUYENLIEU (MaNguyenLieu, MaLoaiNguyenLieu, TenNguyenLieu, SoLuong, DonVi) VALUES
 (1, 2, 'Ức Gà', 300, 'Gr'),
 (2, 1, 'Cà Rốt', 1.5, 'Củ'),
